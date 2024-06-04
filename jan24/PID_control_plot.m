@@ -30,7 +30,7 @@ set_val = 60;
 f = xlsread('pid-control-jan24.xlsx', 'Sheet1', 'B2:B63');
 t = xlsread('pid-control-jan24.xlsx', 'Sheet1', 'A2:A63');
 
-% plot dataset
+% Plot dataset
 plot(t,f);
 hold on;
 plot([t(1), t(end)], [f(1), f(1)]);

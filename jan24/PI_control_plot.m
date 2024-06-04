@@ -25,7 +25,7 @@ set_val = 60;
 f = xlsread('pi-control-jan24.xlsx', 'Sheet1', 'B2:B70');
 t = xlsread('pi-control-jan24.xlsx', 'Sheet1', 'A2:A70');
 
-% plot dataset
+% Plot dataset
 plot(t,f);
 hold on;
 plot([t(1), t(end)], [f(1), f(1)]);

@@ -1,6 +1,6 @@
-# Ignore everything
+# Ignore everything including folders
 *
 
-# Do not ignore .m and .xlsx files
-!*.m
-!*.xlsx
+# Explicitly allow .m and .xlsx files in the root directory
+!/*.m
+!/*.xlsx

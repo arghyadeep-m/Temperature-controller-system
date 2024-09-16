@@ -1,9 +1,9 @@
 clc, clearvars, close all;
 % ritual to remove all the previous terminal output, vars, plots
 
-f = xlsread('open-loop-jan-24-correct.xlsx', 'Sheet1', 'B2:B183');
+f = xlsread('open-loop-response.xlsx', 'Sheet1', 'B2:B183');
 n = size(f,1);
-t = xlsread('open-loop-jan-24-correct.xlsx', 'Sheet1', 'A2:A183');
+t = xlsread('open-loop-response.xlsx', 'Sheet1', 'A2:A183');
 
 time_gap = 5;
 [m, c, inflexion_point_idx] = findInflex(f, n, time_gap);
@@ -37,6 +37,6 @@ T2 = x(1);
 T1 = x(2) - x(1);
 
 % Writing to a file
-fileID = fopen('open_loop_const.txt', 'w');
+fileID = fopen('system_tf_parameters.txt', 'w');
 fprintf(fileID, '%f\n%f\n%f\n', K, T1, T2);
 fclose(fileID);

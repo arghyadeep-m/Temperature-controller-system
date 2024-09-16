@@ -1,9 +1,9 @@
 clc, clearvars, close all;
 % ritual to remove all the previous terminal output, vars, plots
 
-f = xlsread('open-loop-response.xlsx', 'Sheet1', 'B2:B183');
+f = xlsread('open-loop-response-data.xlsx', 'Sheet1', 'B2:B183');
 n = size(f,1);
-t = xlsread('open-loop-response.xlsx', 'Sheet1', 'A2:A183');
+t = xlsread('open-loop-response-data.xlsx', 'Sheet1', 'A2:A183');
 
 time_gap = 5;
 [m, c, inflexion_point_idx] = findInflex(f, n, time_gap);

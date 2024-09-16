@@ -4,12 +4,12 @@ clc, clearvars, close all;
 set_val = 60;
 
 % load dataset 1
-f1 = xlsread('on-off-control-low-hyst.xlsx', 'Sheet1', 'B2:B70');
-t1 = xlsread('on-off-control-low-hyst.xlsx', 'Sheet1', 'A2:A70');
+f1 = xlsread('on-off-control-low-hysteresis-data.xlsx', 'Sheet1', 'B2:B70');
+t1 = xlsread('on-off-control-low-hysteresis-data.xlsx', 'Sheet1', 'A2:A70');
 
 % load dataset 2
-f2 = xlsread('on-off-control-high-hyst.xlsx', 'Sheet1', 'B2:B107');
-t2 = xlsread('on-off-control-high-hyst.xlsx', 'Sheet1', 'A2:A107');
+f2 = xlsread('on-off-control-high-hysteresis-data.xlsx', 'Sheet1', 'B2:B107');
+t2 = xlsread('on-off-control-high-hysteresis-data.xlsx', 'Sheet1', 'A2:A107');
 
 % Plot dataset 1
 subplot(1,2,1);

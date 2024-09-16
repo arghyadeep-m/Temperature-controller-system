@@ -1,7 +1,6 @@
-% fetching data of system parameters
-open_loop_plot;
+open_loop_script; % it generates system_tf_parameters.txt file
 clc, clearvars, close all; % ritual to erase all the previous terminal message, vars, plots
-fileID = fopen('open_loop_const.txt', 'r');
+fileID = fopen('system_tf_parameters.txt', 'r');
 parameters = fscanf(fileID, '%f');
 K = parameters(1);
 T1 = parameters(2);
@@ -22,8 +21,8 @@ i = K_i/K_imax;
 set_val = 60;
 
 % load data
-f = xlsread('pi-control-jan24.xlsx', 'Sheet1', 'B2:B70');
-t = xlsread('pi-control-jan24.xlsx', 'Sheet1', 'A2:A70');
+f = xlsread('pi-control-data.xlsx', 'Sheet1', 'B2:B70');
+t = xlsread('pi-control-data.xlsx', 'Sheet1', 'A2:A70');
 
 % Plot dataset
 plot(t,f);
@@ -33,7 +32,7 @@ hold on;
 plot([t(1), t(end)], [set_val, set_val]);
 xlabel('Time in s');
 ylabel('Temperature in degree C');
-title('PI control - Jan 2024');
+title('PI control response');
 
 % peak overshoot computation
 peak_overshoot = ( max(f) - f(60) )*100/f(60);

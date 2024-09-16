@@ -12,7 +12,7 @@ f2 = xlsread('on-off-control-high-hyst-data.xlsx', 'Sheet1', 'B2:B107');
 t2 = xlsread('on-off-control-high-hyst-data.xlsx', 'Sheet1', 'A2:A107');
 
 % Plot dataset 1
-subplot(1,2,1);
+figure;
 plot(t1, f1);
 ylim([20 80]);
 hold on;
@@ -24,7 +24,7 @@ ylabel('Temperature in degree C');
 title('ON-OFF control - Low hysteresis')
 
 % Plot dataset 2
-subplot(1,2,2);
+figure;
 plot(t2, f2);
 ylim([20 80]);
 hold on;

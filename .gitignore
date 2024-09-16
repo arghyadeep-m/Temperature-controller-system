@@ -4,3 +4,4 @@
 # Explicitly allow .m and .xlsx files in the root directory
 !/*.m
 !/*.xlsx
+!/*.txt

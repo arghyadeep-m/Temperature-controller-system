@@ -20,15 +20,18 @@ y = m*x + c;
 plot(x, y);
 hold on;
 % ambient line
-plot( [0, (f(1)-c)/m], [f(1), f(1)] );
+plot([t(1), t(end)], [f(1) f(1)]);
 hold on;
 % steady state line
-plot( [(f(n)-c)/m, t(end)], [f(n), f(n)] );
+plot([t(1), t(end)], [f(end) f(end)]);
 hold on;
+% point of inflection
 plot( time_gap*(inflection_point_idx - 1), f(inflection_point_idx) , 'g*');
+% title, labels, legend to plot
 title('Open loop response');
-xlabel('time in s');
-ylabel('temperature in degree C');
+xlabel('Time (s)');
+ylabel('Temperature (°C)');
+legend("System response", "Inflectional tangent", "Ambient temperature", "Steady state temperature", "Point of inflection", 'Location', 'best');
 
 % const calculation
 input_volts = 0.5;

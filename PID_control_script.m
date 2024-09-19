@@ -30,14 +30,15 @@ f = xlsread('pid-control-data.xlsx', 'Sheet1', 'B2:B63');
 t = xlsread('pid-control-data.xlsx', 'Sheet1', 'A2:A63');
 
 % Plot dataset
-plot(t,f);
+plot(t,f);  % main plot
 hold on;
-plot([t(1), t(end)], [f(1), f(1)]);
+plot([t(1), t(end)], [f(1), f(1)]); % ambient temperature
 hold on;
-plot([t(1), t(end)], [set_val, set_val]);
-xlabel('Time in s');
-ylabel('Temperature in degree C');
+plot([t(1), t(end)], [set_val, set_val]);   % temperature setpoint
+xlabel('Time (s)');
+ylabel('Temperature (°C)');
 title('PID control response');
+legend("System response", "Ambient temperature", "Temperature setpoint", 'Location', 'best');
 
 % peak overshoot computation
 peak_overshoot = ( max(f) - f(end) )*100/f(end);

@@ -13,24 +13,26 @@ t2 = xlsread('on-off-control-high-hyst-data.xlsx', 'Sheet1', 'A2:A107');
 
 % Plot dataset 1
 figure;
-plot(t1, f1);
+plot(t1, f1);   % main plot
 ylim([20 80]);
 hold on;
-plot([t1(1), t1(end)], [f1(1),f1(1)]);
+plot([t1(1), t1(end)], [f1(1),f1(1)]);  % ambient temperature
 hold on;
-plot([t1(1), t1(end)], [set_val,set_val]);
-xlabel('Time in s');
-ylabel('Temperature in degree C');
+plot([t1(1), t1(end)], [set_val,set_val]);  % temperature setpoint
+xlabel('Time (s)');
+ylabel('Temperature (°C)');
 title('ON-OFF control - Low hysteresis')
+legend("System response", "Ambient temperature", "Temperature setpoint", 'Location', 'best');
 
 % Plot dataset 2
 figure;
-plot(t2, f2);
+plot(t2, f2);   % main plot
 ylim([20 80]);
 hold on;
-plot([t2(1), t2(end)], [f2(1), f2(1)]);
+plot([t2(1), t2(end)], [f2(1), f2(1)]);  % ambient temperature
 hold on;
-plot([t2(1), t2(end)], [set_val,set_val]);
-xlabel('Time in s')
-ylabel('Temperatue in degree C')
+plot([t2(1), t2(end)], [set_val,set_val]);  % temperature setpoint
+xlabel('Time (s)')
+ylabel('Temperatue (°C)')
 title('ON-OFF control - High hysteresis')
+legend("System response", "Ambient temperature", "Temperature setpoint", 'Location', 'best');

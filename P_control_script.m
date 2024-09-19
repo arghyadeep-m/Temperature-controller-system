@@ -20,15 +20,16 @@ f1 = xlsread('p-control-data.xlsx', 'Sheet1', 'B2:B59');
 t1 = xlsread('p-control-data.xlsx', 'Sheet1', 'A2:A59');
 
 % Plot dataset
-plot(t1, f1);
+plot(t1, f1);   % main plot
 ylim([20 65]);
 hold on;
-plot([t1(1), t1(end)], [f1(1),f1(1)]);
+plot([t1(1), t1(end)], [f1(1),f1(1)]);  % ambient temperature
 hold on;
-plot([t1(1), t1(end)], [set_val,set_val]);
-xlabel('Time in s');
-ylabel('Temperature in degree C');
+plot([t1(1), t1(end)], [set_val,set_val]);  % temperature setpoint
+xlabel('Time (s)');
+ylabel('Temperature (°C)');
 title('P control response');
+legend("System response", "Ambient temperature", "Temperature setpoint", 'Location', 'best');
 
 % peak overshoot computation
 peak_overshoot = ( max(f1) - set_val )*100/set_val;

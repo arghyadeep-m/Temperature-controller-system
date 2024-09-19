@@ -25,14 +25,15 @@ f = xlsread('pi-control-data.xlsx', 'Sheet1', 'B2:B70');
 t = xlsread('pi-control-data.xlsx', 'Sheet1', 'A2:A70');
 
 % Plot dataset
-plot(t,f);
+plot(t,f);  % main plot
 hold on;
-plot([t(1), t(end)], [f(1), f(1)]);
+plot([t(1), t(end)], [f(1), f(1)]); % ambient temperature
 hold on;
-plot([t(1), t(end)], [set_val, set_val]);
-xlabel('Time in s');
-ylabel('Temperature in degree C');
+plot([t(1), t(end)], [set_val, set_val]);   % temperature setpoint
+xlabel('Time (s)');
+ylabel('Temperature (°C)');
 title('PI control response');
+legend("System response", "Ambient temperature", "Temperature setpoint", 'Location', 'best');
 
 % peak overshoot computation
 peak_overshoot = ( max(f) - f(60) )*100/f(60);

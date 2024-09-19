@@ -6,15 +6,15 @@ n = size(f,1);
 t = xlsread('open-loop-response-data.xlsx', 'Sheet1', 'A2:A183');
 
 time_gap = 5;
-[m, c, inflexion_point_idx] = findInflex(f, n, time_gap);
-% m = inflex_slope
-% c = inflex_yIntercept
+[m, c, inflection_point_idx] = findInflect(f, n, time_gap);
+% m = inflect_slope
+% c = inflect_yIntercept
 
 % plotting
 % main data
 plot(t,f);
 hold on;
-% inflexion line
+% inflection line
 x = [ (f(1)-c)/m, (f(n)-c)/m ]; % T2 = x(1), T1 = x(2) - x(1)
 y = m*x + c;
 plot(x, y);
@@ -25,7 +25,7 @@ hold on;
 % steady state line
 plot( [(f(n)-c)/m, t(end)], [f(n), f(n)] );
 hold on;
-plot( time_gap*(inflexion_point_idx - 1), f(inflexion_point_idx) , 'g*');
+plot( time_gap*(inflection_point_idx - 1), f(inflection_point_idx) , 'g*');
 title('Open loop response');
 xlabel('time in s');
 ylabel('temperature in degree C');

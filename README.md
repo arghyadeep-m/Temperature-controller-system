@@ -1,4 +1,4 @@
-# Temperature-controller-system
+# Performance Evaluation of Temperature Controllers
 
 ## Overview
 This repository provides access to the experimental data and MATLAB scripts used in the temperature control system project, guided by Professor Sayantan Chakraborty at Department of Electrical Engineering, Jadavpur University, Kolkata. The repository includes scripts for plotting and analyzing data of various control strategies (ON-OFF, P, PI, PID) and plots for each method. Additionally, it stores the open loop response data, system transfer function parameters, and necessary helper functions.
